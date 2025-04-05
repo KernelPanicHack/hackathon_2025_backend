@@ -17,14 +17,14 @@ class AuthController extends Controller
      */
     public function login(LoginApiRequest $request): JsonResponse
     {
-        if (Auth::attempt(['login' => $request->login, 'password' => $request->password])) {
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             $user = Auth::user();
 
-            $response = Http::post(env('OAUTH_URL') . '/oauth/token', [
+            $response = Http::post(env('APP_URL') . '/oauth/token', [
                 'grant_type' => 'password',
                 'client_id' => env('PASSPORT_PASSWORD_CLIENT_ID'),
                 'client_secret' => env('PASSPORT_PASSWORD_SECRET'),
-                'username' => $request->login,
+                'username' => $request->email,
                 'password' => $request->password,
                 'scope' => '',
             ]);
@@ -72,4 +72,18 @@ class AuthController extends Controller
         ], $response->status());
     }
 
+
+    /**
+     * Logout
+     */
+    public function logout(): JsonResponse
+    {
+        Auth::user()->tokens()->delete();
+
+        return response()->json([
+            'success' => true,
+            'statusCode' => 204,
+            'message' => 'Logged out successfully.',
+        ], 204);
+    }
 }

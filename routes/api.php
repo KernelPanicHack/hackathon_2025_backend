@@ -11,6 +11,5 @@ Route::post('/refresh', [AuthController::class, 'refreshToken']);
 Route::get('/ws/getToken', [WSController::class, 'getToken']);
 
 Route::group(['middleware' => ['auth:api']], function () {
-    Route::get('/me', [AuthController::class, 'me']);
     Route::post('/logout', [AuthController::class, 'logout']);
 });

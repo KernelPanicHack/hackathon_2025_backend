@@ -54,6 +54,17 @@ class User extends Authenticatable
         ];
     }
 
+    /**
+     * Find the user instance for the given username.
+     *
+     * @param string $email
+     * @return mixed
+     */
+    public function findForPassport(string $email): mixed
+    {
+        return $this->where('email', $email)->first();
+    }
+
     public function operations()
     {
         return $this->belongsToMany(
