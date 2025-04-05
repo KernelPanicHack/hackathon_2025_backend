@@ -17,7 +17,7 @@ Route::get('auth/google/callback', [SocialAuthController::class, 'handleGoogleCa
 Route::middleware('auth')->group(function () {
     Route::get('profile', [ProfileController::class, 'index'])->name('profile');
 
-    Route::post('/expenses/month-data', [ProfileController::class, 'getMonthData'])->name('expenses.monthData');
+    Route::post('/expenses/month-data', [ProfileController::class, 'monthData'])->name('expenses.monthData');
     Route::get('/', function () {
         return view('index');
     })->name('index');
