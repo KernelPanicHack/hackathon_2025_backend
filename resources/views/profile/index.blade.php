@@ -27,7 +27,7 @@
     <div class="container py-4">
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h2 class="mb-0" id="monthTitle">{{ \Carbon\Carbon::parse($currentMonth . '-01')->translatedFormat('F Y') }}</h2>
-            <a href="#" class="btn btn-outline-secondary">Выход</a>
+            <a href="{{route('login.logout')}}" class="btn btn-outline-secondary">Выход</a>
         </div>
 
         <div class="row">
