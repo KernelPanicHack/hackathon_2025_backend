@@ -11,27 +11,21 @@ use phpseclib3\Math\BigInteger;
  *
  * Представляет операцию в системе.
  *
- * Каждая операция может быть связана с множеством пользователей (через таблицу user_operations)
- * и с множеством товаров (через таблицу operation_items).
  *
  * @package App\Models
+ *
+ * @property BigInteger $id;
+ * @property string $type;
+ * @property int $cost;
+ * @property int $remaining_balance;
+ * @property string $category;
+ * @property BigInteger $ref_no;
  */
 class Operation extends Model
 {
     use HasFactory;
 
-    /**
-     * Атрибуты, которые можно массово заполнять.
-     *
-     * @var BigInteger $id;
-     * @var string $type;
-     * @var int $cost;
-     * @var int $remaining_balance;
-     * @var string $category;
-     * @var string $category;
-     * @var BigInteger $ref_no;
-     *
-     */
+
     protected $fillable = [
         'type',
         'cost',
@@ -68,6 +62,21 @@ class Operation extends Model
             'operation_items',
             'operation_id',
             'item_id'
+        )->withTimestamps();
+    }
+
+    /**
+     * Категории, к которым относится данная операция.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function categories()
+    {
+        return $this->belongsToMany(
+            Category::class,
+            'operation_categories',
+            'operation_id',
+            'category_id'
         )->withTimestamps();
     }
 }
