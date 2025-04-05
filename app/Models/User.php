@@ -2,11 +2,12 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Brick\Math\BigInteger;
+use App\Http\Requests\RegisterRequest;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Hash;
 
 class User extends Authenticatable
 {
@@ -16,11 +17,11 @@ class User extends Authenticatable
     /**
      * The attributes that are mass assignable.
      *
-     * @var BigInteger $id;
-     * @var string $name;
-     * @var string $email;
-     * @var string $email_verified_at;
-     * @var string $avatar;
+     * @var BigInteger $id ;
+     * @var string $name ;
+     * @var string $email ;
+     * @var string $email_verified_at ;
+     * @var string $avatar ;
      */
     protected $fillable = [
         'name',
@@ -60,5 +61,16 @@ class User extends Authenticatable
             'user_id',
             'operation_id'
         )->withTimestamps();
+    }
+
+    public static function makeUser(RegisterRequest $request): User
+    {
+        $user = new User();
+        $user->email = $request->post('email');
+        $user->password = Hash::make($request->validated('password'));
+        $user->name = mb_split('@', $request->post('email'))[0];
+        $user->save();
+
+        return $user;
     }
 }
