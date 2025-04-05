@@ -15,10 +15,7 @@ Route::get('auth/google', [SocialAuthController::class, 'redirectToGoogle']);
 Route::get('auth/google/callback', [SocialAuthController::class, 'handleGoogleCallback']);
 
 Route::middleware('auth')->group(function () {
-    Route::get('profile', [ProfileController::class, 'index'])->name('profile');
+    Route::get('profile', [ProfileController::class, 'index'])->name('index');
 
     Route::post('/expenses/month-data', [ProfileController::class, 'getMonthData'])->name('expenses.monthData');
-    Route::get('/', function () {
-        return view('index');
-    })->name('index');
 });
