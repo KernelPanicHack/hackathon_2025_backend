@@ -29,7 +29,7 @@ class Operation extends Model
         'type',
         'cost',
         'remaining_balance',
-        'category',
+        'category_id',
         'date',
         'ref_no',
     ];
@@ -82,5 +82,10 @@ class Operation extends Model
     public function category()
     {
         return $this->belongsTo(Category::class, 'category_id');
+    }
+
+    public function item()
+    {
+        return $this->belongsTo(Item::class, 'item_id');
     }
 }
