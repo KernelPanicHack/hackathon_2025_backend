@@ -52,10 +52,10 @@ class SocialAuthController extends Controller
 
             Auth::login($user);
 
-            return redirect()->route('home');
+            return redirect()->route('index');
 
         } catch (\Exception $e) {
-            return redirect()->route('home')->withErrors('message', 'Что-то пошло не так!');
+            return redirect()->route('login')->withErrors('message', 'Что-то пошло не так!');
         }
     }
 }
