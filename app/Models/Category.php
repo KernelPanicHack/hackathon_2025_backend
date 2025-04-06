@@ -39,4 +39,9 @@ class Category extends Model
             'operation_id'
         )->withTimestamps();
     }
+
+    public function items()
+    {
+        return $this->hasManyThrough(Item::class, Operation::class, 'category_id', 'id', 'id', 'item_id');
+    }
 }
