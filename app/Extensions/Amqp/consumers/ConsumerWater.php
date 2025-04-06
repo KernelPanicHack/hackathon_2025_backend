@@ -8,7 +8,7 @@ use App\Extensions\Amqp\handlers\exceptions\ExceptionHandlerInterface;
 use App\Extensions\Amqp\helpers\MessageSerializer;
 use App\Extensions\Amqp\helpers\QueueHelper;
 use App\Extensions\Amqp\jobs\JobInterface;
-use App\Jobs\GpsTripJob;
+use App\Jobs\CategorizeJob;
 use App\Models\Trips\Trip;
 use App\Models\Trips\TripFile;
 use App\Models\Spr\SprFileExtension;

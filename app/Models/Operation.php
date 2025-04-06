@@ -25,7 +25,6 @@ class Operation extends Model
 {
     use HasFactory;
 
-
     protected $fillable = [
         'type',
         'cost',

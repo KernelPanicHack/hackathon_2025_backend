@@ -21,17 +21,6 @@ class MessageSerializer
     }
 
     /**
-     * Метод, который подготавливает данные для отправки в очередь
-     *
-     * @param JobInterface $content
-     * @return AMQPMessage
-     */
-    public static function serializeStrMessage(string $content): AMQPMessage
-    {
-        return new AMQPMessage($content);
-    }
-
-    /**
      * Метод выполняет роль извлечения данных из сообщения
      * полученного через очередь.
      *

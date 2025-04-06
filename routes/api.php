@@ -11,8 +11,10 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::post('/refresh', [AuthController::class, 'refreshToken']);
 Route::get('/ws/getToken', [WSController::class, 'getToken']);
 
-Route::post('/getCategory', [LoadOperationController::class, 'loadOperation']);
+
 
 Route::group(['middleware' => ['auth:api']], function () {
+    Route::post('/getCategory', [LoadOperationController::class, 'loadOperation']);
+
     Route::post('/logout', [AuthController::class, 'logout']);
 });

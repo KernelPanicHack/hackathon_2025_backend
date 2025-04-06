@@ -24,7 +24,7 @@ class ConsumeCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Работа со слушателями rabbitmq. Доступные методы: "queueSlow" и "queueCommonTrip"';
+    protected $description = 'Работа со слушателями rabbitmq. Доступные методы: "queueSlow" и "queueCommon"';
 
     public function handle()
     {
@@ -45,7 +45,7 @@ class ConsumeCommand extends Command
     public function actionQueueSlow()
     {
         try {
-            $consumer = new Consumer('slow-php', array(new DbExceptionHandler()));
+            $consumer = new Consumer('slow', array(new DbExceptionHandler()));
             $consumer->consume();
         } catch (Exception $exception) {
             Log::warning($exception->getMessage());
@@ -55,23 +55,10 @@ class ConsumeCommand extends Command
     /**
      * Прослушивание очереди, где происходят "тяжелые" операции
      */
-    public function actionQueueCommonTrip()
+    public function actionQueueCommon()
     {
         try {
-            $consumer = new ConsumerTrip('common-trip', array(new DbExceptionHandler()));
-            $consumer->consume();
-        } catch (Exception $exception) {
-            Log::warning($exception->getMessage());
-        }
-    }
-
-    /**
-     * Прослушивание очереди, где происходят "тяжелые" операции
-     */
-    public function actionQueueCommonWater()
-    {
-        try {
-            $consumer = new ConsumerWater('water-level-php', array(new DbExceptionHandler()));
+            $consumer = new Consumer('common', array(new DbExceptionHandler()));
             $consumer->consume();
         } catch (Exception $exception) {
             Log::warning($exception->getMessage());
