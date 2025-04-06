@@ -41,7 +41,7 @@ class PredictUser extends Command
                     'date' => $operation->date,
                     'cost' => $operation->cost
                 ];
-                if (count($data) > 0) {
+                if (count($data) > 100) {
                     $response = Http::post($url . $endpoint, ['data' => $data]);
                     $json = $response->json();
                     $forecast = $json['forecast'];

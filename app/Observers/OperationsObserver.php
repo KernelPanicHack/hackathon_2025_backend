@@ -5,6 +5,7 @@ namespace App\Observers;
 
 use App\Models\Operation;
 use App\Models\User;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Mail;
 
 class OperationsObserver
@@ -26,6 +27,8 @@ class OperationsObserver
                     ->subject("Ваш баланс меньше финансовой подушки в 3 раза. Рекомендуемый баланс $recomend");
             });
         }
+
+        Artisan::call('app:predict-user');
 
     }
 
