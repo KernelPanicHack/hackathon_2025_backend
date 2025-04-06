@@ -5,7 +5,6 @@ namespace App\Observers;
 
 use App\Models\Operation;
 use App\Models\User;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
 class OperationsObserver
@@ -15,10 +14,10 @@ class OperationsObserver
      */
     public function created(Operation $operations): void
     {
-        $user = User::query()->find($operations->user_id)->first();
+        $user = User::query()->find($operations->user_id);
 
         $balance = $operations->remaining_balance;
-        if ($balance < $user->money/3) {
+        if ($balance < $user->cushion/3) {
             $messageContent = 'Ваш любимый банк';
             $recomend = $user->money/3;
             // Отправка сообщения
