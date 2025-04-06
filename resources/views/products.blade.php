@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container py-4">
-        <!-- Кнопка назад с иконкой стрелки -->
+        <!-- Кнопка "Назад к списку" -->
         <div class="d-flex justify-content-between align-items-center mb-4">
             <a href="{{ route('index') }}" class="btn btn-light btn-rounded d-flex align-items-center shadow-sm">
                 <i class="fas fa-arrow-left me-2"></i>Назад к списку
@@ -20,10 +20,12 @@
                 </div>
 
                 <div class="card-body p-0">
-                    <!-- Список товаров (операций) с кастомным скроллом -->
+                    <!-- Список операций с кастомным скроллом -->
                     <div class="scrollable-list" style="max-height: 500px;">
                         @forelse ($items as $operation)
-                            <div class="product-item d-flex justify-content-between align-items-center px-4 py-3 hover-bg" id="operation-{{ $operation->id }}">
+                            <div class="product-item d-flex justify-content-between align-items-center px-4 py-3 hover-bg"
+                                 id="operation-{{ $operation->id }}"
+                                 data-item-id="{{ $operation->item->id }}">
                                 <div class="d-flex align-items-center" style="width: 40%;">
                                     <i class="fas fa-cube text-muted me-3"></i>
                                     <span class="text-truncate">{{ $operation->item->name }}</span>
@@ -32,15 +34,17 @@
                                 <button class="btn btn-outline-primary btn-pill px-4 d-flex align-items-center changeCategoryBtn"
                                         data-bs-toggle="modal"
                                         data-bs-target="#categoryModal"
-                                        data-operation-id="{{ $operation->id }}">
+                                        data-operation-id="{{ $operation->id }}"
+                                        data-current-category-id="{{ $operation->item->category_id }}">
                                     <i class="fas fa-exchange-alt me-2"></i>
                                     Изменить
                                 </button>
 
+
                                 <div class="text-end" style="width: 20%;">
-                                    <span class="badge bg-success fw-normal fs-6">
-                                        {{ number_format($operation->cost, 0, ',', ' ') }} ₽
-                                    </span>
+            <span class="badge bg-success fw-normal fs-6">
+                {{ number_format($operation->cost, 0, ',', ' ') }} ₽
+            </span>
                                 </div>
                             </div>
                             <hr class="m-0">
@@ -50,6 +54,7 @@
                                 <p class="text-muted fs-5">Нет товаров в этой категории</p>
                             </div>
                         @endforelse
+
                     </div>
                 </div>
             </div>
@@ -83,7 +88,7 @@
                                 <button class="btn btn-category w-100 py-3"
                                         data-category-id="{{ $cat->id }}"
                                         style="background-color: {{ $colors[$index % count($colors)]['bg'] }};
-                               border-color: {{ $colors[$index % count($colors)]['border'] }};">
+                                               border-color: {{ $colors[$index % count($colors)]['border'] }};">
                                     <i class="fas fa-folder-open fa-2x mb-2"></i><br>
                                     {{ $cat->name }}
                                 </button>
@@ -154,6 +159,7 @@
         let selectedOperationId = null;
         let selectedCategoryId = null;
 
+        // При клике на кнопку "Изменить" выбираем операцию
         document.querySelectorAll('.changeCategoryBtn').forEach(button => {
             button.addEventListener('click', function() {
                 selectedOperationId = this.getAttribute('data-operation-id');
@@ -162,6 +168,7 @@
             });
         });
 
+        // При выборе категории в модальном окне отмечаем кнопку как активную
         document.querySelectorAll('.btn-category').forEach(button => {
             button.addEventListener('click', function() {
                 document.querySelectorAll('.btn-category').forEach(btn => btn.classList.remove('active'));
@@ -170,6 +177,7 @@
             });
         });
 
+        // При клике на "Сохранить" отправляем запрос на изменение категории
         document.getElementById('saveCategoryBtn').addEventListener('click', async function() {
             if (!selectedOperationId || !selectedCategoryId) {
                 alert('Пожалуйста, выберите товар и новую категорию!');
@@ -189,10 +197,12 @@
                 const data = await response.json();
 
                 if (data.success) {
+                    // Удаляем элемент операции из списка, делая его невидимым для пользователя
                     const operationElem = document.getElementById(`operation-${selectedOperationId}`);
                     if (operationElem) {
                         operationElem.remove();
                     }
+                    // Закрываем модальное окно
                     const modalEl = document.getElementById('categoryModal');
                     const modal = bootstrap.Modal.getInstance(modalEl);
                     modal.hide();
@@ -203,5 +213,55 @@
                 alert('Ошибка: ' + error);
             }
         });
+
+            function moveItemToCategory(itemId, newCategoryId) {
+            fetch(`/items/${itemId}/update-category`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                },
+                body: JSON.stringify({
+                    category_id: newCategoryId
+                })
+            })
+                .then(response => {
+                    if (!response.ok) throw new Error('Ошибка при перемещении');
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.success) {
+                        alert('Элемент успешно перемещён!');
+                        location.reload(); // или обновить только часть DOM, если нужно
+                    }
+                })
+                .catch(error => {
+                    console.error('Ошибка:', error);
+                    alert('Не удалось переместить элемент');
+                });
+                let selectedOperationId = null;
+                let selectedCategoryId = null;
+                let currentCategoryId = null;
+
+                document.querySelectorAll('.changeCategoryBtn').forEach(button => {
+                    button.addEventListener('click', function () {
+                        selectedOperationId = this.getAttribute('data-operation-id');
+                        currentCategoryId = this.getAttribute('data-current-category-id');
+                        selectedCategoryId = null;
+
+                        // Очистка старых активных
+                        document.querySelectorAll('.btn-category').forEach(btn => btn.classList.remove('active'));
+
+                        // Подсвечиваем текущую категорию
+                        const currentBtn = document.querySelector(`.btn-category[data-category-id="${currentCategoryId}"]`);
+                        if (currentBtn) {
+                            currentBtn.classList.add('active');
+                            selectedCategoryId = currentCategoryId;
+                        }
+                    });
+                });
+
+            }
+
     </script>
 @endpush

@@ -30,7 +30,7 @@ class Operation extends Model
         'type',
         'cost',
         'remaining_balance',
-        'category',
+        'category_id',
         'date',
         'ref_no',
     ];

@@ -19,23 +19,33 @@ class ProductsController extends Controller
             })
             ->get();
 
-        $operationType = $operations->first()->type ?? ''; // Предполагаем, что все операции одной категории имеют одинаковый тип
-
-        // Если это депозит, исключаем категории, связанные с депозитами
-        if ($operationType === 'deposit') {
+        // Получаем первую операцию, чтобы определить тип
+        $firstOperation = $operations->first();
+        // Если тип операции deposit (type_id = 2), то фильтруем категории, исключая те,
+        // которые используются в операциях с type_id = 2 (например, salary)
+        if ($firstOperation && $firstOperation->type_id == 2) {
             $otherCategories = Category::where('id', '!=', $id)
-                ->where('type', 'withdrawal') // Фильтруем только категории расходов
+                ->whereNotIn('id', function ($query) {
+                    $query->select('category_id')
+                        ->from('operations')
+                        ->where('type_id', 2);
+                })
                 ->get();
         } else {
-            // Если это не депозит, просто получаем все другие категории с типом 'expense'
+            // Если это не deposit, можно оставить только те категории,
+            // которые используются в операциях с type_id отличным от 2
             $otherCategories = Category::where('id', '!=', $id)
-                ->where('type', 'withdrawal') // Фильтруем только категории расходов
+                ->whereIn('id', function ($query) {
+                    $query->select('category_id')
+                        ->from('operations')
+                        ->where('type_id', '<>', 2);
+                })
                 ->get();
         }
 
         return view('products', [
-            'category' => $category,
-            'items' => $operations,
+            'category'   => $category,
+            'items'      => $operations,
             'categories' => $otherCategories,
         ]);
     }
@@ -50,7 +60,6 @@ class ProductsController extends Controller
 
         $operation->update([
             'category_id' => $request->category_id,
-            'hidden'      => true,
         ]);
 
         return response()->json(['success' => true]);
@@ -66,17 +75,35 @@ class ProductsController extends Controller
             })
             ->get();
 
-        $otherCategories = Category::where('id', '!=', $categoryId)->get();
+        $firstOperation = $operations->first();
+        if ($firstOperation && $firstOperation->type_id == 2) {
+            $otherCategories = Category::where('id', '!=', $categoryId)
+                ->whereNotIn('id', function ($query) {
+                    $query->select('category_id')
+                        ->from('operations')
+                        ->where('type_id', 2);
+                })
+                ->get();
+        } else {
+            $otherCategories = Category::where('id', '!=', $categoryId)
+                ->whereIn('id', function ($query) {
+                    $query->select('category_id')
+                        ->from('operations')
+                        ->where('type_id', '<>', 2);
+                })
+                ->get();
+        }
 
         return view('category.show', [
-            'category' => $category,
-            'items' => $operations,
+            'category'   => $category,
+            'items'      => $operations,
             'categories' => $otherCategories,
         ]);
     }
 
     public function updateItemCategory(Request $request, $itemId)
     {
+
         $newCategoryId = $request->input('category_id');
 
         $operation = Operation::where('item_id', $itemId)->first();
