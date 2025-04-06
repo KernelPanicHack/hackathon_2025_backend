@@ -22,7 +22,6 @@ class TypesSeeder extends Seeder
             // Читаем данные построчно
             while (($data = fgetcsv($handle)) !== false) {
                 Type::create([
-                    'id' => $data[0],
                     'name' => $data[1],
                     'slug' => $data[2],
                 ]);

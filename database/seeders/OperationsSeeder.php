@@ -24,7 +24,6 @@ class OperationsSeeder extends Seeder
             // Читаем данные построчно
             while (($data = fgetcsv($handle)) !== false) {
                 Operation::create([
-                    'id' => $data[0],
                     'type_id' => Type::where('name', $data[1])->first()->id,
                     'cost' => $data[2],
                     'remaining_balance' => $data[3],
