@@ -1,0 +1,57 @@
+id,name,slug
+1,apartment,apartment
+2,house,house
+3,parking,parking
+4,garage,garage
+5,rentals,rentals
+6,storage,storage
+7,cleaning supplies,cleaning-supplies
+8,fees,fees
+9,service,service
+10,subscription,subscription
+11,donations,donations
+12,gifts,gifts
+13,bread,bread
+14,milk,milk
+15,meat,meat
+16,apple,apple
+17,rice,rice
+18,potato,potato
+19,chicken,chicken
+20,sugar,sugar
+21,fruits,fruits
+22,vegetables,vegetables
+23,fish,fish
+24,dairy,dairy
+25,sweets,sweets
+26,fast food,fast-food
+27,soda,soda
+28,frozen food,frozen-food
+29,canned food,canned-food
+30,snacks,snacks
+31,clothes,clothes
+32,shoes,shoes
+33,bag,bag
+34,watch,watch
+35,phone,phone
+36,jewelry,jewelry
+37,cosmetics,cosmetics
+38,electronics,electronics
+39,furniture,furniture
+40,toys,toys
+41,books,books
+42,bus,bus
+43,taxi,taxi
+44,train,train
+45,fuel,fuel
+46,metro,metro
+47,bicycle,bicycle
+48,car rental,car-rental
+49,plane,plane
+50,ride-sharing,ride-sharing
+51,Food,food
+52,Misc,misc
+53,Rent,rent
+54,Shopping,shopping
+55,Transport,transport
+56,Salary,salary

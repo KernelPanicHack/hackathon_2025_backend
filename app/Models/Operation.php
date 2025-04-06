@@ -16,10 +16,10 @@ use phpseclib3\Math\BigInteger;
  *
  * @property BigInteger $id;
  * @property string $type;
- * @property int $cost;
+ * @property BigInteger $cost;
  * @property int $remaining_balance;
  * @property string $category;
- * @property BigInteger $ref_no;
+ * @property string $ref_no;
  */
 class Operation extends Model
 {
@@ -77,5 +77,10 @@ class Operation extends Model
             'operation_id',
             'category_id'
         )->withTimestamps();
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class, 'category_id');
     }
 }

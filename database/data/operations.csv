@@ -1,0 +1,377 @@
+id,type,cost,remaining_balance,category,date,ref_no,items
+0,withdrawal,236.0,7285.62,Misc,2025-01-01,MIR2421393691857,gifts
+1,withdrawal,15.0,7270.62,Food,2025-01-01,3.21E+11,apple
+2,withdrawal,30.0,7240.62,Food,2025-01-01,3.21E+11,sweets
+3,deposit,2000.0,9240.62,Misc,2025-01-02,3.21E+11,Misc
+4,withdrawal,7459.0,1781.62,Rent,2025-01-02,3.21E+11,house
+5,withdrawal,243.0,1538.62,Misc,2025-01-02,3.21E+11,cleaning supplies
+6,withdrawal,999.0,539.62,Misc,2025-01-02,3.21E+11,donations
+7,withdrawal,10.0,529.62,Food,2025-01-02,3.21E+11,canned food
+8,withdrawal,90.0,439.62,Food,2025-01-02,3.21E+11,fast food
+9,withdrawal,24.0,415.62,Food,2025-01-02,3.21E+11,chicken
+10,withdrawal,6.0,409.62,Misc,2025-01-02,3.21E+11,service
+11,withdrawal,140.0,269.62,Misc,2025-01-02,3.21E+11,service
+12,withdrawal,30.0,239.62,Food,2025-01-02,3.21E+11,sweets
+13,withdrawal,55.0,184.62,Food,2025-01-03,3.58E+11,sweets
+14,withdrawal,40.0,144.62,Food,2025-01-03,3.22E+11,meat
+15,withdrawal,40.0,104.62,Food,2025-01-03,3.22E+11,milk
+16,withdrawal,40.0,64.62,Food,2025-01-03,3.22E+11,snacks
+17,withdrawal,20.0,44.62,Food,2025-01-04,3.22E+11,fish
+18,deposit,13000.0,13044.62,Misc,2025-01-05,3.58E+11,Misc
+19,withdrawal,13000.0,44.62,Misc,2025-01-05,3.22E+11,donations
+20,deposit,1000.0,1044.62,Misc,2025-01-11,3.22E+11,Misc
+21,withdrawal,85.0,959.62,Food,2025-01-11,3.22E+11,snacks
+22,withdrawal,30.0,929.62,Food,2025-01-11,3.22E+11,dairy
+23,withdrawal,50.0,879.62,Food,2025-01-11,3.22E+11,rice
+24,withdrawal,179.0,700.62,Misc,2025-01-11,3.22E+11,donations
+25,withdrawal,10.0,690.62,Food,2025-01-11,3.59E+11,sweets
+26,withdrawal,60.0,630.62,Food,2025-01-11,3.59E+11,meat
+27,withdrawal,393.0,237.62,Misc,2025-01-12,3.22E+11,service
+28,withdrawal,30.0,207.62,Food,2025-01-12,3.22E+11,fruits
+29,withdrawal,66.0,141.62,Food,2025-01-12,3.22E+11,snacks
+30,deposit,2000.0,2141.62,Misc,2025-01-13,3.23E+11,Misc
+31,withdrawal,80.0,2061.62,Food,2025-01-13,3.23E+11,potato
+32,withdrawal,50.0,2011.62,Food,2025-01-13,3.23E+11,fast food
+33,withdrawal,130.0,1881.62,Misc,2025-01-13,3.23E+11,gifts
+34,withdrawal,189.0,1692.62,Misc,2025-01-13,3.23E+11,service
+35,withdrawal,30.0,1662.62,Food,2025-01-13,3.23E+11,canned food
+36,withdrawal,500.0,1162.62,Misc,2025-01-13,3.23E+11,donations
+37,withdrawal,10.0,1152.62,Food,2025-01-13,3.23E+11,milk
+38,withdrawal,99.0,1053.62,Food,2025-01-14,3.23E+11,bread
+39,withdrawal,50.0,1003.62,Food,2025-01-14,3.23E+11,frozen food
+40,withdrawal,50.0,953.62,Food,2025-01-14,3.23E+11,chicken
+41,withdrawal,358.0,595.62,Misc,2025-01-14,3.23E+11,donations
+42,withdrawal,30.0,565.62,Food,2025-01-14,3.23E+11,fast food
+43,withdrawal,20.0,545.62,Food,2025-01-15,3.23E+11,dairy
+44,withdrawal,40.0,505.62,Food,2025-01-15,3.23E+11,potato
+45,withdrawal,30.0,475.62,Food,2025-01-15,3.23E+11,chicken
+46,deposit,25.0,500.62,Misc,2025-01-15,3.23E+11,Misc
+47,withdrawal,60.0,440.62,Food,2025-01-16,3.23E+11,rice
+48,withdrawal,10.0,430.62,Food,2025-01-16,3.23E+11,meat
+49,withdrawal,40.0,390.62,Food,2025-01-16,3.23E+11,fast food
+50,withdrawal,42.0,348.62,Food,2025-01-16,3.23E+11,fruits
+51,withdrawal,230.0,118.62,Misc,2025-01-16,3.23E+11,subscription
+52,withdrawal,40.0,78.62,Food,2025-01-16,3.23E+11,rice
+53,withdrawal,50.0,28.62,Food,2025-01-17,3.23E+11,fish
+54,deposit,1500.0,1528.62,Misc,2025-01-17,3.23E+11,Misc
+55,withdrawal,1000.0,528.62,Misc,2025-01-17,3.23E+11,fees
+56,withdrawal,50.0,478.62,Food,2025-01-17,3.23E+11,soda
+57,withdrawal,161.55,317.07,Food,2025-01-17,3.60E+11,fast food
+58,withdrawal,60.0,257.07,Food,2025-01-18,3.23E+11,meat
+59,withdrawal,40.0,217.07,Food,2025-01-18,3.23E+11,soda
+60,withdrawal,67.2,149.87,Food,2025-01-18,3.60E+11,sugar
+61,withdrawal,20.0,129.87,Food,2025-01-18,3.23E+11,frozen food
+62,deposit,1000.0,1129.87,Misc,2025-01-18,3.23E+11,Misc
+63,withdrawal,86.0,1043.87,Food,2025-01-18,3.23E+11,milk
+64,withdrawal,276.0,767.87,Misc,2025-01-18,3.60E+11,donations
+65,withdrawal,50.0,717.87,Food,2025-01-18,3.23E+11,soda
+66,withdrawal,390.0,327.87,Misc,2025-01-19,3.23E+11,fees
+67,withdrawal,40.0,287.87,Food,2025-01-19,3.23E+11,vegetables
+68,deposit,1000.0,1287.87,Misc,2025-01-19,3.23E+11,Misc
+69,withdrawal,50.0,1237.87,Food,2025-01-19,3.23E+11,fast food
+70,withdrawal,40.0,1197.87,Food,2025-01-19,3.23E+11,soda
+71,withdrawal,20.0,1177.87,Food,2025-01-20,3.23E+11,soda
+72,withdrawal,30.0,1147.87,Food,2025-01-20,3.23E+11,fruits
+73,withdrawal,60.0,1087.87,Food,2025-01-20,3.23E+11,fast food
+74,withdrawal,60.0,1027.87,Food,2025-01-20,3.23E+11,milk
+75,withdrawal,5.0,1022.87,Misc,2025-01-20,3.23E+11,service
+76,withdrawal,174.95,847.92,Food,2025-01-20,3.60E+11,chicken
+77,withdrawal,40.0,807.92,Food,2025-01-20,3.23E+11,potato
+78,withdrawal,400.0,407.92,Misc,2025-01-20,3.23E+11,cleaning supplies
+79,withdrawal,20.0,387.92,Food,2025-01-20,3.23E+11,meat
+80,withdrawal,160.0,227.92,Misc,2025-01-21,3.23E+11,subscription
+81,withdrawal,50.0,177.92,Food,2025-01-21,3.23E+11,rice
+82,withdrawal,22.0,155.92,Food,2025-01-21,3.23E+11,chicken
+83,withdrawal,75.0,80.92,Food,2025-01-21,3.60E+11,bread
+84,withdrawal,40.0,40.92,Food,2025-01-21,3.23E+11,dairy
+85,deposit,1000.0,1040.92,Misc,2025-01-22,3.23E+11,Misc
+86,withdrawal,70.0,970.92,Food,2025-01-22,3.60E+11,snacks
+87,deposit,70.0,1040.92,Misc,2025-01-22,3.23E+11,Misc
+88,withdrawal,55.0,985.92,Food,2025-01-22,3.60E+11,dairy
+89,withdrawal,50.0,935.92,Food,2025-01-22,3.23E+11,canned food
+90,withdrawal,10.0,925.92,Food,2025-01-22,3.23E+11,fast food
+91,withdrawal,38.0,887.92,Food,2025-01-22,3.23E+11,potato
+92,withdrawal,20.0,867.92,Food,2025-01-22,3.23E+11,apple
+93,withdrawal,28.0,839.92,Food,2025-01-23,3.60E+11,bread
+94,withdrawal,23.0,816.92,Food,2025-01-23,3.24E+11,rice
+95,withdrawal,30.0,786.92,Food,2025-01-23,3.24E+11,canned food
+96,withdrawal,50.0,736.92,Food,2025-01-23,3.24E+11,sugar
+97,withdrawal,30.0,706.92,Food,2025-01-23,3.24E+11,snacks
+98,withdrawal,200.0,506.92,Misc,2025-01-23,3.24E+11,cleaning supplies
+99,withdrawal,201.0,305.92,Food,2025-01-24,3.24E+11,rice
+100,withdrawal,100.0,205.92,Food,2025-01-24,3.24E+11,sweets
+101,withdrawal,50.0,155.92,Food,2025-01-24,3.24E+11,soda
+102,withdrawal,59.0,96.92,Food,2025-01-24,3.24E+11,fish
+103,withdrawal,50.0,46.92,Food,2025-01-24,3.24E+11,vegetables
+104,deposit,34800.0,34846.92,Salary,2025-01-25,CHASV23235906561,Salary
+105,withdrawal,5000.0,29846.92,Misc,2025-01-25,3.60E+11,subscription
+106,withdrawal,8000.0,21846.92,Misc,2025-01-25,3.60E+11,cleaning supplies
+107,withdrawal,1000.0,20846.92,Misc,2025-01-25,3.60E+11,fees
+108,withdrawal,1000.0,19846.92,Misc,2025-01-25,3.60E+11,fees
+109,withdrawal,34.0,19812.92,Food,2025-01-25,3.24E+11,sweets
+110,withdrawal,1000.0,18812.92,Misc,2025-01-25,3.24E+11,gifts
+111,withdrawal,380.0,18432.92,Misc,2025-01-25,3.24E+11,subscription
+112,deposit,140.0,18572.92,Misc,2025-01-25,3.60E+11,Misc
+113,withdrawal,100.0,18472.92,Food,2025-01-25,3.24E+11,frozen food
+114,withdrawal,1720.0,16752.92,Misc,2025-01-25,3.24E+11,subscription
+115,withdrawal,200.0,16552.92,Misc,2025-01-25,3.24E+11,subscription
+116,withdrawal,188.0,16364.92,Misc,2025-01-25,3.24E+11,cleaning supplies
+117,withdrawal,40.0,16324.92,Food,2025-01-25,3.24E+11,sugar
+118,withdrawal,70.0,16254.92,Food,2025-01-25,3.24E+11,frozen food
+119,deposit,15.0,16269.92,Misc,2025-01-25,3.60E+11,Misc
+120,withdrawal,50.0,16219.92,Food,2025-01-25,3.24E+11,potato
+121,withdrawal,120.0,16099.92,Misc,2025-01-26,3.24E+11,fees
+122,withdrawal,30.0,16069.92,Food,2025-01-26,3.24E+11,fish
+123,withdrawal,430.0,15639.92,Misc,2025-01-26,3.24E+11,fees
+124,deposit,70.0,15709.92,Misc,2025-01-26,3.60E+11,Misc
+125,withdrawal,112.0,15597.92,Misc,2025-01-26,3.24E+11,service
+126,deposit,10.0,15607.92,Misc,2025-01-26,3.60E+11,Misc
+127,withdrawal,118.0,15489.92,Misc,2025-01-26,3.24E+11,subscription
+128,withdrawal,10.0,15479.92,Food,2025-01-26,3.24E+11,bread
+129,withdrawal,1000.0,14479.92,Misc,2025-01-26,3.24E+11,subscription
+130,withdrawal,188.2,14291.72,Food,2025-01-26,3.60E+11,milk
+131,withdrawal,40.0,14251.72,Food,2025-01-26,3.60E+11,rice
+132,withdrawal,199.0,14052.72,Misc,2025-01-27,3.24E+11,gifts
+133,withdrawal,30.0,14022.72,Food,2025-01-27,3.24E+11,sweets
+134,withdrawal,58.0,13964.72,Food,2025-01-27,3.24E+11,potato
+135,deposit,12.0,13976.72,Misc,2025-01-27,3.61E+11,Misc
+136,withdrawal,100.0,13876.72,Food,2025-01-27,3.24E+11,milk
+137,withdrawal,50.0,13826.72,Food,2025-01-27,3.24E+11,chicken
+138,withdrawal,203.66,13623.06,Food,2025-01-28,3.24E+11,dairy
+139,withdrawal,105.0,13518.06,Misc,2025-01-28,3.61E+11,service
+140,withdrawal,40.0,13478.06,Food,2025-01-28,3.24E+11,apple
+141,withdrawal,5.0,13473.06,Misc,2025-01-29,3.24E+11,donations
+142,withdrawal,23.0,13450.06,Food,2025-01-29,3.61E+11,fruits
+143,withdrawal,30.0,13420.06,Food,2025-01-29,3.24E+11,canned food
+144,withdrawal,43.0,13377.06,Food,2025-01-29,3.24E+11,meat
+145,withdrawal,10.0,13367.06,Food,2025-01-29,3.24E+11,sweets
+146,withdrawal,185.2,13181.86,Food,2025-01-29,3.61E+11,vegetables
+147,withdrawal,110.0,13071.86,Misc,2025-01-30,3.61E+11,gifts
+148,deposit,55.0,13126.86,Misc,2025-01-30,3.24E+11,Misc
+149,withdrawal,40.0,13086.86,Food,2025-01-30,3.24E+11,vegetables
+150,withdrawal,100.0,12986.86,Food,2025-01-30,3.61E+11,potato
+151,withdrawal,40.0,12946.86,Food,2025-01-30,3.24E+11,vegetables
+152,withdrawal,30.0,12916.86,Food,2025-01-31,3.24E+11,sugar
+153,withdrawal,100.0,12816.86,Food,2025-01-31,3.61E+11,canned food
+154,withdrawal,30.0,12786.86,Food,2025-01-31,3.24E+11,sweets
+155,deposit,20000.0,32786.86,Misc,2025-01-31,3.24E+11,Misc
+156,withdrawal,20000.0,12786.86,Misc,2025-01-31,3.24E+11,cleaning supplies
+157,withdrawal,440.0,12346.86,Misc,2025-01-31,3.24E+11,service
+158,withdrawal,7310.0,5036.86,Rent,2025-02-01,3.24E+11,storage
+159,withdrawal,110.0,4926.86,Misc,2025-02-01,3.24E+11,service
+160,withdrawal,20.0,4906.86,Food,2025-02-01,3.24E+11,snacks
+161,withdrawal,30.0,4876.86,Food,2025-02-01,3.24E+11,fish
+162,withdrawal,447.0,4429.86,Misc,2025-02-01,3.24E+11,fees
+163,withdrawal,52.0,4377.86,Food,2025-02-01,3.24E+11,fish
+164,withdrawal,20.0,4357.86,Food,2025-02-01,3.24E+11,bread
+165,withdrawal,188.2,4169.66,Food,2025-02-02,3.61E+11,vegetables
+166,withdrawal,50.0,4119.66,Food,2025-02-02,3.25E+11,dairy
+167,withdrawal,136.76,3982.9,Food,2025-02-02,3.61E+11,fruits
+168,deposit,136.76,4119.66,Food,2025-02-02,3.25E+11,Food
+169,withdrawal,30.0,4089.66,Food,2025-02-03,3.25E+11,apple
+170,withdrawal,36.0,4053.66,Food,2025-02-03,3.25E+11,vegetables
+171,withdrawal,60.0,3993.66,Food,2025-02-03,3.25E+11,snacks
+172,withdrawal,20.0,3973.66,Food,2025-02-03,3.25E+11,sugar
+173,withdrawal,30.0,3943.66,Food,2025-02-04,3.25E+11,fruits
+174,withdrawal,55.0,3888.66,Food,2025-02-04,3.25E+11,sweets
+175,withdrawal,250.0,3638.66,Misc,2025-02-04,3.25E+11,donations
+176,withdrawal,30.0,3608.66,Food,2025-02-04,3.25E+11,snacks
+177,withdrawal,80.0,3528.66,Food,2025-02-05,3.25E+11,canned food
+178,withdrawal,50.0,3478.66,Food,2025-02-05,3.25E+11,meat
+179,withdrawal,1000.0,2478.66,Misc,2025-02-05,3.61E+11,donations
+180,withdrawal,55.0,2423.66,Food,2025-02-06,3.62E+11,soda
+181,withdrawal,40.0,2383.66,Food,2025-02-06,3.25E+11,apple
+182,withdrawal,217.95,2165.71,Food,2025-02-06,3.62E+11,soda
+183,withdrawal,60.0,2105.71,Food,2025-02-06,3.25E+11,chicken
+184,withdrawal,170.0,1935.71,Misc,2025-02-07,3.25E+11,subscription
+185,withdrawal,200.0,1735.71,Misc,2025-02-07,3.25E+11,service
+186,withdrawal,40.0,1695.71,Food,2025-02-07,3.25E+11,chicken
+187,withdrawal,80.0,1615.71,Food,2025-02-07,3.25E+11,fish
+188,withdrawal,85.0,1530.71,Food,2025-02-07,3.25E+11,sweets
+189,withdrawal,25.0,1505.71,Food,2025-02-08,3.25E+11,dairy
+190,withdrawal,40.0,1465.71,Food,2025-02-08,3.25E+11,sweets
+191,deposit,80.0,1545.71,Misc,2025-02-08,3.25E+11,Misc
+192,withdrawal,190.0,1355.71,Misc,2025-02-08,3.62E+11,service
+193,withdrawal,279.5,1076.21,Misc,2025-02-09,3.25E+11,service
+194,withdrawal,52.0,1024.21,Food,2025-02-09,3.25E+11,vegetables
+195,withdrawal,30.0,994.21,Food,2025-02-09,3.25E+11,fast food
+196,withdrawal,10.0,984.21,Food,2025-02-09,3.25E+11,rice
+197,withdrawal,40.0,944.21,Food,2025-02-09,3.25E+11,rice
+198,withdrawal,230.7,713.51,Food,2025-02-10,3.25E+11,sugar
+199,withdrawal,54.0,659.51,Food,2025-02-10,3.25E+11,fast food
+200,deposit,500.0,1159.51,Misc,2025-02-10,3.62E+11,Misc
+201,withdrawal,426.94,732.57,Food,2025-02-10,3.62E+11,rice
+202,withdrawal,192.24,540.33,Food,2025-02-11,3.25E+11,milk
+203,withdrawal,55.0,485.33,Food,2025-02-11,3.25E+11,frozen food
+204,withdrawal,80.0,405.33,Food,2025-02-11,3.25E+11,bread
+205,withdrawal,20.0,385.33,Food,2025-02-11,3.25E+11,meat
+206,withdrawal,10.0,375.33,Food,2025-02-11,3.25E+11,frozen food
+207,withdrawal,10.0,365.33,Food,2025-02-11,3.25E+11,meat
+208,withdrawal,125.0,240.33,Misc,2025-02-11,3.25E+11,cleaning supplies
+209,withdrawal,30.0,210.33,Food,2025-02-12,3.26E+11,vegetables
+210,withdrawal,55.0,155.33,Food,2025-02-12,3.26E+11,milk
+211,withdrawal,40.0,115.33,Food,2025-02-12,3.26E+11,canned food
+212,withdrawal,60.0,55.33,Food,2025-02-12,3.26E+11,fish
+213,withdrawal,10.0,45.33,Food,2025-02-12,3.26E+11,soda
+214,withdrawal,23.0,22.33,Food,2025-02-13,3.62E+11,apple
+215,withdrawal,10.0,12.33,Food,2025-02-16,3.26E+11,soda
+216,deposit,1000.0,1012.33,Misc,2025-02-23,3.27E+11,Misc
+217,withdrawal,300.1,712.23,Misc,2025-02-23,3.27E+11,donations
+218,withdrawal,700.0,12.23,Misc,2025-02-23,3.27E+11,donations
+219,deposit,34800.0,34812.23,Salary,2025-02-25,CHASH26441571950,Salary
+220,withdrawal,7451.0,27361.23,Misc,2025-02-25,3.27E+11,service
+221,deposit,7152.0,34513.23,Misc,2025-02-25,3.63E+11,Misc
+222,withdrawal,8624.0,25889.23,Misc,2025-02-25,3.27E+11,gifts
+223,withdrawal,10000.0,15889.23,Misc,2025-02-25,3.63E+11,cleaning supplies
+224,withdrawal,2313.0,13576.23,Misc,2025-02-25,3.63E+11,cleaning supplies
+225,withdrawal,7500.0,6076.23,Misc,2025-02-25,3.63E+11,service
+226,withdrawal,120.0,5956.23,Misc,2025-02-25,3.27E+11,donations
+227,withdrawal,36.0,5920.23,Food,2025-02-25,3.27E+11,sweets
+228,withdrawal,40.0,5880.23,Food,2025-02-25,3.27E+11,soda
+229,withdrawal,275.0,5605.23,Misc,2025-02-25,3.63E+11,cleaning supplies
+230,withdrawal,329.0,5276.23,Misc,2025-02-25,3.27E+11,gifts
+231,withdrawal,36.0,5240.23,Food,2025-02-26,3.27E+11,sugar
+232,withdrawal,10.0,5230.23,Food,2025-02-26,3.27E+11,meat
+233,withdrawal,50.0,5180.23,Food,2025-02-26,3.27E+11,rice
+234,withdrawal,159.56,5020.67,Food,2025-02-26,3.64E+11,dairy
+235,withdrawal,1000.0,4020.67,Misc,2025-02-26,3.27E+11,cleaning supplies
+236,withdrawal,55.0,3965.67,Food,2025-02-27,3.64E+11,frozen food
+237,withdrawal,50.0,3915.67,Food,2025-02-27,3.27E+11,sugar
+238,withdrawal,100.0,3815.67,Food,2025-02-28,3.64E+11,milk
+239,withdrawal,40.0,3775.67,Food,2025-02-28,3.27E+11,soda
+240,withdrawal,155.5,3620.17,Food,2025-02-28,3.64E+11,sweets
+241,withdrawal,240.0,3380.17,Misc,2025-02-28,3.27E+11,subscription
+242,withdrawal,247.0,3133.17,Misc,2025-02-28,3.27E+11,fees
+243,withdrawal,48.0,3085.17,Food,2025-02-28,3.27E+11,sugar
+244,withdrawal,20.0,3065.17,Food,2025-02-28,3.27E+11,soda
+245,withdrawal,880.0,2185.17,Misc,2025-02-28,3.27E+11,fees
+250,deposit,20.0,1851.32,Misc,2025-03-01,0,Misc
+251,withdrawal,20.0,1831.32,Food,2025-03-01,3.27E+11,snacks
+252,withdrawal,20.0,1811.32,Food,2025-03-01,3.27E+11,milk
+253,withdrawal,25.0,1786.32,Food,2025-03-01,3.27E+11,fruits
+254,withdrawal,50.0,1736.32,Food,2025-03-01,3.27E+11,fast food
+255,withdrawal,85.0,1651.32,Food,2025-03-01,3.27E+11,chicken
+256,withdrawal,10.0,1641.32,Food,2025-03-02,3.27E+11,apple
+257,withdrawal,49.0,1592.32,Food,2025-03-02,3.28E+11,vegetables
+258,withdrawal,30.0,1562.32,Food,2025-03-02,3.64E+11,vegetables
+259,withdrawal,49.0,1513.32,Food,2025-03-02,3.28E+11,fruits
+260,withdrawal,80.0,1433.32,Food,2025-03-02,3.28E+11,snacks
+261,withdrawal,30.0,1403.32,Food,2025-03-02,3.28E+11,canned food
+262,withdrawal,470.0,933.32,Misc,2025-03-02,3.28E+11,service
+263,withdrawal,19.0,914.32,Food,2025-03-03,3.28E+11,milk
+264,withdrawal,130.0,784.32,Misc,2025-03-03,3.28E+11,donations
+265,withdrawal,188.74,595.58,Food,2025-03-03,3.64E+11,dairy
+266,withdrawal,48.0,547.58,Food,2025-03-03,3.28E+11,potato
+267,withdrawal,10.0,537.58,Food,2025-03-03,3.28E+11,dairy
+268,deposit,385.0,922.58,Misc,2025-03-03,3.28E+11,Misc
+269,withdrawal,680.0,242.58,Misc,2025-03-03,3.28E+11,donations
+270,deposit,43.0,285.58,Misc,2025-03-03,3.28E+11,Misc
+271,deposit,1000.0,1285.58,Misc,2025-03-03,3.64E+11,Misc
+272,withdrawal,370.0,915.58,Misc,2025-03-03,3.28E+11,gifts
+273,withdrawal,80.0,835.58,Food,2025-03-04,3.64E+11,sugar
+274,withdrawal,45.0,790.58,Food,2025-03-04,3.64E+11,milk
+275,withdrawal,120.0,670.58,Misc,2025-03-04,3.28E+11,subscription
+276,withdrawal,12.0,658.58,Food,2025-03-04,3.28E+11,fast food
+277,withdrawal,35.0,623.58,Food,2025-03-05,3.28E+11,dairy
+278,withdrawal,70.0,553.58,Food,2025-03-05,3.64E+11,snacks
+279,withdrawal,75.0,478.58,Food,2025-03-05,3.64E+11,rice
+280,withdrawal,33.0,445.58,Food,2025-03-06,3.28E+11,frozen food
+281,withdrawal,95.0,350.58,Food,2025-03-06,3.28E+11,apple
+282,withdrawal,87.69,262.89,Food,2025-03-07,3.28E+11,meat
+283,withdrawal,184.0,78.89,Misc,2025-03-07,3.65E+11,subscription
+284,deposit,1000.0,1078.89,Misc,2025-03-09,3.28E+11,Misc
+285,withdrawal,79.0,999.89,Food,2025-03-09,3.28E+11,milk
+286,withdrawal,50.0,949.89,Food,2025-03-10,3.28E+11,dairy
+287,withdrawal,42.0,907.89,Food,2025-03-10,3.65E+11,sugar
+288,withdrawal,80.0,827.89,Food,2025-03-11,3.65E+11,bread
+289,withdrawal,70.0,757.89,Food,2025-03-12,3.65E+11,frozen food
+290,withdrawal,36.0,721.89,Food,2025-03-13,3.29E+11,frozen food
+291,withdrawal,270.0,451.89,Misc,2025-03-13,3.65E+11,fees
+292,withdrawal,24.0,427.89,Food,2025-03-14,3.29E+11,bread
+293,deposit,270.0,697.89,Misc,2025-03-14,3.29E+11,Misc
+294,withdrawal,291.0,406.89,Misc,2025-03-16,3.29E+11,gifts
+295,deposit,3500.0,3906.89,Misc,2025-03-16,3.66E+11,Misc
+296,withdrawal,1500.0,2406.89,Misc,2025-03-16,3.29E+11,donations
+297,deposit,286.0,2692.89,Misc,2025-03-16,3.29E+11,Misc
+298,withdrawal,300.0,2392.89,Misc,2025-03-16,3.29E+11,service
+299,withdrawal,150.0,2242.89,Misc,2025-03-16,3.29E+11,subscription
+300,withdrawal,40.0,2202.89,Food,2025-03-16,3.29E+11,fast food
+301,withdrawal,248.0,1954.89,Misc,2025-03-16,3.66E+11,gifts
+302,withdrawal,30.0,1924.89,Food,2025-03-16,3.66E+11,soda
+303,withdrawal,214.74,1710.15,Food,2025-03-16,3.66E+11,fish
+304,withdrawal,65.0,1645.15,Food,2025-03-17,3.29E+11,chicken
+305,withdrawal,706.0,939.15,Misc,2025-03-17,3.29E+11,gifts
+306,withdrawal,150.0,789.15,Misc,2025-03-17,3.29E+11,donations
+307,withdrawal,234.0,555.15,Misc,2025-03-17,3.29E+11,fees
+308,withdrawal,60.0,495.15,Food,2025-03-17,3.29E+11,soda
+309,withdrawal,65.0,430.15,Food,2025-03-18,3.29E+11,sugar
+310,withdrawal,10.0,420.15,Food,2025-03-18,3.29E+11,sugar
+311,withdrawal,20.0,400.15,Food,2025-03-19,3.29E+11,canned food
+312,withdrawal,18.0,382.15,Food,2025-03-20,3.29E+11,apple
+313,withdrawal,25.0,357.15,Food,2025-03-20,3.29E+11,fast food
+314,withdrawal,100.0,257.15,Food,2025-03-26,3.30E+11,frozen food
+315,deposit,3150.0,3407.15,Misc,2025-03-26,3.30E+11,Misc
+316,withdrawal,3407.0,0.15,Misc,2025-03-27,3.67E+11,donations
+317,deposit,500.0,500.15,Misc,2025-04-01,3.31E+11,Misc
+318,withdrawal,500.0,0.15,Misc,2025-04-01,3.31E+11,donations
+319,deposit,1000.0,1000.15,Misc,2025-04-02,3.31E+11,Misc
+320,withdrawal,1000.0,0.15,Misc,2025-04-02,3.67E+11,service
+321,deposit,1000.0,1000.15,Misc,2025-04-02,3.31E+11,Misc
+322,withdrawal,1000.0,0.15,Misc,2025-04-02,3.67E+11,subscription
+323,deposit,33209.0,33209.15,Misc,2025-04-15,CHASH31948851670,Misc
+324,withdrawal,5000.0,28209.15,Misc,2025-04-15,3.69E+11,cleaning supplies
+325,withdrawal,3500.0,24709.15,Misc,2025-04-15,3.69E+11,donations
+326,withdrawal,20000.0,4709.15,Misc,2025-04-15,3.69E+11,fees
+327,withdrawal,1500.0,3209.15,Misc,2025-04-15,3.69E+11,service
+328,withdrawal,69.0,3140.15,Food,2025-04-17,3.32E+11,fruits
+329,withdrawal,100.0,3040.15,Food,2025-04-18,3.32E+11,soda
+330,withdrawal,116.0,2924.15,Misc,2025-04-18,3.32E+11,fees
+331,withdrawal,1999.0,925.15,Shopping,2025-04-20,3.69E+11,furniture
+332,deposit,1999.0,2924.15,Shopping,2025-04-20,3.69E+11,Shopping
+333,withdrawal,150.0,2774.15,Misc,2025-04-22,3.33E+11,cleaning supplies
+334,withdrawal,150.0,2624.15,Misc,2025-04-22,3.33E+11,fees
+335,deposit,24769.0,27393.15,Salary,2025-04-24,CHASH32649207986,Salary
+336,withdrawal,499.0,26894.15,Shopping,2025-04-24,3.69E+11,furniture
+337,withdrawal,1499.0,25395.15,Misc,2025-04-24,3.33E+11,subscription
+338,withdrawal,2000.0,23395.15,Misc,2025-04-24,3.69E+11,cleaning supplies
+339,withdrawal,21000.0,2395.15,Misc,2025-04-25,3.70E+11,cleaning supplies
+340,withdrawal,223.18,2171.97,Food,2025-04-26,3.33E+11,canned food
+341,deposit,272.0,2443.97,Misc,2025-04-27,3.33E+11,Misc
+342,withdrawal,720.0,1723.97,Misc,2025-04-27,3.70E+11,service
+343,withdrawal,480.0,1243.97,Misc,2025-04-28,3.70E+11,service
+344,withdrawal,250.0,993.97,Misc,2025-04-28,3.70E+11,subscription
+345,withdrawal,130.0,863.97,Misc,2025-04-30,3.70E+11,donations
+346,deposit,50.0,913.97,Misc,2025-04-30,3.33E+11,Misc
+347,withdrawal,19.0,894.97,Food,2024-12-01,3.70E+11,fish
+348,withdrawal,200.0,694.97,Misc,2024-12-02,3.34E+11,donations
+349,withdrawal,120.0,574.97,Misc,2024-12-03,3.34E+11,gifts
+350,deposit,7.0,581.97,Misc,2024-12-03,3.34E+11,Misc
+351,deposit,70.0,651.97,Misc,2024-12-03,3.34E+11,Misc
+352,withdrawal,500.0,151.97,Misc,2024-12-04,3.34E+11,subscription
+353,deposit,500.0,651.97,Misc,2024-12-04,3.34E+11,Misc
+354,withdrawal,450.0,201.97,Misc,2024-12-04,3.34E+11,subscription
+355,deposit,150.0,351.97,Misc,2024-12-06,3.71E+11,Misc
+356,withdrawal,60.0,291.97,Food,2024-12-06,3.71E+11,sugar
+357,deposit,15000.0,15291.97,Misc,2024-12-07,3.34E+11,Misc
+358,withdrawal,15048.0,243.97,Misc,2024-12-09,3.34E+11,fees
+359,deposit,4000.0,4243.97,Misc,2024-12-10,3.71E+11,Misc
+360,withdrawal,3062.0,1181.97,Transport,2024-12-10,3.34E+11,bicycle
+361,withdrawal,1000.0,181.97,Misc,2024-12-10,3.71E+11,donations
+362,deposit,1000.0,1181.97,Misc,2024-12-10,3.34E+11,Misc
+363,withdrawal,30.0,1151.97,Food,2024-12-11,3.71E+11,canned food
+364,withdrawal,10.0,1141.97,Food,2024-12-11,3.71E+11,soda
+365,withdrawal,30.0,1111.97,Food,2024-12-11,3.71E+11,milk
+366,withdrawal,220.0,891.97,Misc,2024-12-11,3.71E+11,cleaning supplies
+367,withdrawal,169.29,722.68,Food,2024-12-11,3.35E+11,canned food
+368,withdrawal,25.0,697.68,Food,2024-12-12,3.71E+11,chicken
+369,withdrawal,40.0,657.68,Food,2024-12-12,3.71E+11,canned food
+370,withdrawal,20.0,637.68,Food,2024-12-12,3.71E+11,snacks
+371,withdrawal,530.0,107.68,Misc,2024-12-12,3.35E+11,gifts
+372,withdrawal,35.0,72.68,Food,2024-12-12,3.71E+11,milk
+373,deposit,1718.0,1790.68,Misc,2024-12-12,3.35E+11,Misc
+374,withdrawal,1718.0,72.68,Transport,2024-12-12,3.35E+11,bicycle
+375,withdrawal,26.0,46.68,Food,2024-12-13,3.71E+11,sugar
+376,withdrawal,15.0,31.68,Food,2024-12-13,3.71E+11,chicken
+377,deposit,1718.0,1749.68,Transport,2024-12-13,3.35E+11,Transport
+378,withdrawal,1718.0,31.68,Misc,2024-12-13,3.71E+11,donations
+379,deposit,8.0,39.68,Misc,2024-01-01,0,Misc
