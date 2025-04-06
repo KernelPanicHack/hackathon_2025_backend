@@ -3,19 +3,22 @@
 
 @push('styles')
     {{-- Подключение Font Awesome, Bootstrap и кастомных стилей --}}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+          integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <style>
         .chart-wrapper {
             display: flex;
             align-items: center;
             justify-content: center;
         }
+
         .chart-wrapper button {
             background: none;
             border: none;
             font-size: 1.5rem;
             cursor: pointer;
         }
+
         .chart-container {
             max-width: 300px;
             margin: 0 1rem;
@@ -26,7 +29,8 @@
 @section('content')
     <div class="container py-4">
         <div class="d-flex justify-content-between align-items-center mb-3">
-            <h2 class="mb-0" id="monthTitle">{{ \Carbon\Carbon::parse($currentMonth . '-01')->translatedFormat('F Y') }}</h2>
+            <h2 class="mb-0"
+                id="monthTitle">{{ \Carbon\Carbon::parse($currentMonth . '-01')->translatedFormat('F Y') }}</h2>
             <a href="{{route('login.logout')}}" class="btn btn-outline-secondary">Выход</a>
         </div>
 
@@ -86,6 +90,14 @@
                 </div>
             </div>
         </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-end">
+                    <p class="fs-2 fw-weight-bold">Финансовая
+                        подушка {{round(\Illuminate\Support\Facades\Auth::user()->cushion?? 0, 2)}} Руб</p>
+                </div>
+            </div>
+        </div>
     </div>
 @endsection
 
@@ -118,7 +130,7 @@
         }
 
         // Функция для инициализации/обновления диаграмм
-        function initCharts(labels, dataValues, forecastData) {
+        function initCharts(labels, dataValues, forecastData, months = []) {
             const uniqueColors = shuffleArray([...presetColors]).slice(0, labels.length);
 
             if (pieChart) {
@@ -151,7 +163,7 @@
                 forecastChart = new Chart(ctxForecast, {
                     type: 'line',
                     data: {
-                        labels: ['Неделя 1', 'Неделя 2', 'Неделя 3', 'Неделя 4'],
+                        labels: months,
                         datasets: [{
                             label: 'Прогноз',
                             data: forecastData,
@@ -161,7 +173,7 @@
                     },
                     options: {
                         responsive: true,
-                        plugins: { legend: { display: false } }
+                        plugins: {legend: {display: false}}
                     }
                 });
             }
@@ -177,12 +189,14 @@
         // Функция обновления страницы новыми данными
         function updatePage(data) {
             const chartLabels = data.chartLabels && data.chartLabels.length ? data.chartLabels : ['Нет данных'];
+            const chartsLinks = data.categoryLinks && data.categoryLinks.length ? data.categoryLinks : [];
             const chartData = data.chartData && data.chartData.length ? data.chartData : [0];
             const forecast = data.forecast && data.forecast.length ? data.forecast : [0, 0, 0, 0];
             const history = data.history && data.history.length ? data.history : [];
+            const months = data.months && data.months.length ? data.months : [];
 
             const monthDate = new Date(data.month + '-01');
-            const options = { month: 'long', year: 'numeric' };
+            const options = {month: 'long', year: 'numeric'};
             document.getElementById('monthTitle').innerText = monthDate.toLocaleDateString('ru-RU', options);
 
             const total = chartData.reduce((sum, val) => sum + parseFloat(val), 0);
@@ -193,7 +207,7 @@
             chartLabels.forEach((label, index) => {
                 const li = document.createElement('li');
                 li.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center');
-                li.innerHTML = `<span><i class="fas fa-circle me-2"></i>${label}</span><span>${chartData[index]}</span>`;
+                li.innerHTML = `<a href="${chartsLinks[index]}" class="d-flex justify-content-between w-100"><span><i class="fas fa-circle me-2"></i>${label}</span><span>${chartData[index]}</span></a>`;
                 expensesList.appendChild(li);
             });
 
@@ -206,7 +220,7 @@
                 historyList.appendChild(li);
             });
 
-            initCharts(chartLabels, chartData, forecast);
+            initCharts(chartLabels, chartData, forecast, months);
         }
 
         // Функция уведомления (показывает сообщение в углу экрана)
@@ -236,7 +250,7 @@
                         'Content-Type': 'application/json',
                         'X-CSRF-TOKEN': '{{ csrf_token() }}'
                     },
-                    body: JSON.stringify({ month: month })
+                    body: JSON.stringify({month: month})
                 });
                 if (response.ok) {
                     const data = await response.json();
@@ -258,7 +272,7 @@
         }
 
         // Обработчик нажатия стрелки "назад" с проверкой на наличие данных
-        document.getElementById('prevMonth').addEventListener('click', async function() {
+        document.getElementById('prevMonth').addEventListener('click', async function () {
             let date = new Date(currentMonth + '-01');
             date.setMonth(date.getMonth() - 1);
             const newMonth = date.toISOString().slice(0, 7);
@@ -272,7 +286,7 @@
         });
 
         // Обработчик стрелки "вперёд"
-        document.getElementById('nextMonth').addEventListener('click', function() {
+        document.getElementById('nextMonth').addEventListener('click', function () {
             let date = new Date(currentMonth + '-01');
             date.setMonth(date.getMonth() + 1);
             currentMonth = date.toISOString().slice(0, 7);
@@ -280,7 +294,7 @@
         });
 
         // Инициализация данных при загрузке страницы
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const initialData = @json($data);
             updatePage(initialData);
         });

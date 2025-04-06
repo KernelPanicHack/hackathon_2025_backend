@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Operation;
+use App\Models\PredictExpenses;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
@@ -15,7 +18,7 @@ class ProfileController extends Controller
 
         return view('profile.index', [
             'currentMonth' => $currentMonth,
-            'data'         => $data
+            'data' => $data
         ]);
     }
 
@@ -23,14 +26,12 @@ class ProfileController extends Controller
     {
         $month = $request->input('month', Carbon::now()->format('Y-m'));
 
-        // Определяем самый ранний месяц операций типа "Withdrawal" (type_id = 1)
         $firstOperation = Operation::where('type_id', '1')->orderBy('date', 'asc')->first();
         if ($firstOperation) {
             $firstMonth = Carbon::parse($firstOperation->date)->format('Y-m');
-            // Если запрошенный месяц раньше первого месяца операций – возвращаем уведомление
             if (Carbon::parse($month . '-01')->lt(Carbon::parse($firstMonth . '-01'))) {
                 return response()->json([
-                    'error'   => true,
+                    'error' => true,
                     'message' => 'Данных за предыдущие месяца нет'
                 ], 200);
             }
@@ -49,20 +50,16 @@ class ProfileController extends Controller
      */
     protected function getMonthData(string $month): array
     {
-        // Определяем начало и конец месяца
         $startDate = Carbon::createFromFormat('Y-m', $month)->startOfMonth();
-        $endDate   = Carbon::createFromFormat('Y-m', $month)->endOfMonth();
+        $endDate = Carbon::createFromFormat('Y-m', $month)->endOfMonth();
 
-        // Жадная загрузка связанных категорий
         $operations = Operation::with('category')
             ->where('type_id', '1')
             ->whereBetween('date', [$startDate, $endDate])
             ->get();
 
-        // Группируем операции по category_id
         $grouped = $operations->groupBy('category_id');
 
-        // Данные для диаграммы: подписи – имя категории, данные – сумма расходов
         $chartLabels = $grouped->map(function ($group) {
             return optional($group->first()->category)->name ?? 'Без категории';
         })->values()->toArray();
@@ -71,34 +68,41 @@ class ProfileController extends Controller
             return $group->sum('cost');
         })->values()->toArray();
 
-        // История – последние 10 операций (новейшие первыми)
         $history = $operations->sortByDesc('date')
             ->take(10)
             ->map(function ($operation) {
                 return [
-                    'date'     => Carbon::parse($operation->date)->format('d.m.Y'),
+                    'date' => Carbon::parse($operation->date)->format('d.m.Y'),
                     'category' => optional($operation->category)->name ?? 'Без категории',
-                    'amount'   => $operation->cost,
+                    'amount' => $operation->cost,
                 ];
             })->values()->toArray();
 
-        // Прогноз расходов по неделям (предполагаем, что месяц условно делится на 4 недели)
         $forecast = [];
-        for ($i = 0; $i < 4; $i++) {
-            $weekStart = $startDate->copy()->addDays($i * 7);
-            $weekEnd   = $i < 3 ? $weekStart->copy()->addDays(6) : $endDate;
-            $weekExpense = $operations->filter(function ($operation) use ($weekStart, $weekEnd) {
-                return Carbon::parse($operation->date)->between($weekStart, $weekEnd);
-            })->sum('cost');
-            $forecast[] = $weekExpense;
+        $months = [];
+        $user = Auth::user();
+        $predictExpenses = PredictExpenses::query()->where('user_id', $user->id)->orderBy('date')->get();
+        foreach ($predictExpenses as $predictExpense) {
+            $firstMonth = Carbon::parse($predictExpense->date)->format('M');
+            $forecast[] = $predictExpense->money;
+            $months[] = $firstMonth;
         }
 
+        $links = [];
+        foreach ($chartLabels as $chartLabel) {
+            $category = Category::query()->where('name', $chartLabel)->first();
+            $links[] = route('products.index', ['id' => $category->id]);
+        }
+
+
         return [
-            'month'       => $month,
+            'month' => $month,
+            'months' => $months,
             'chartLabels' => $chartLabels,
-            'chartData'   => $chartData,
-            'history'     => $history,
-            'forecast'    => $forecast,
+            'chartData' => $chartData,
+            'categoryLinks' => $links,
+            'history' => $history,
+            'forecast' => $forecast,
         ];
     }
 }

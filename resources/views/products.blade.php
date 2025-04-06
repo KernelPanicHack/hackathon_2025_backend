@@ -2,14 +2,12 @@
 
 @section('content')
     <div class="container py-4">
-        <!-- Кнопка "Назад к списку" -->
         <div class="d-flex justify-content-between align-items-center mb-4">
             <a href="{{ route('index') }}" class="btn btn-light btn-rounded d-flex align-items-center shadow-sm">
                 <i class="fas fa-arrow-left me-2"></i>Назад к списку
             </a>
         </div>
 
-        <!-- Основная карточка -->
         <div class="d-flex justify-content-center">
             <div class="card w-100 shadow-lg rounded-3" style="max-width: 900px;">
                 <div class="card-header bg-primary text-white rounded-top-3">
@@ -20,7 +18,6 @@
                 </div>
 
                 <div class="card-body p-0">
-                    <!-- Список операций с кастомным скроллом -->
                     <div class="scrollable-list" style="max-height: 500px;">
                         @forelse ($items as $operation)
                             <div class="product-item d-flex justify-content-between align-items-center px-4 py-3 hover-bg"
@@ -103,56 +100,65 @@
             </div>
         </div>
     </div>
-@endsection
 
-@push('styles')
     <style>
         .scrollable-list {
             overflow-y: auto;
             scrollbar-width: thin;
             scrollbar-color: #dee2e6 #f8f9fa;
         }
+
         .scrollable-list::-webkit-scrollbar {
             width: 8px;
         }
+
         .scrollable-list::-webkit-scrollbar-track {
             background: #f8f9fa;
         }
+
         .scrollable-list::-webkit-scrollbar-thumb {
             background-color: #dee2e6;
             border-radius: 20px;
         }
+
         .hover-bg:hover {
             background-color: #f8f9fa;
             transition: background-color 0.2s;
         }
+
         .btn-category {
             border-radius: 15px;
             color: white !important;
             transition: transform 0.2s;
         }
+
         .btn-category:hover {
             transform: translateY(-2px);
         }
+
         .btn-rounded {
             border-radius: 50px;
         }
+
         .btn-pill {
             border-radius: 50px;
             transition: all 0.2s;
         }
+
         .btn-pill:hover {
             background-color: #0d6efd;
             color: white !important;
         }
+
         .product-item {
             transition: all 0.2s;
         }
-        .btn-category.active {
-            box-shadow: 0 0 0 2px #fff;
+
+        .btn-category.active-my {
+            box-shadow: 0 0 0 3px #000000;
         }
     </style>
-@endpush
+@endsection
 
 @push('scripts')
     <script>
@@ -161,24 +167,24 @@
 
         // При клике на кнопку "Изменить" выбираем операцию
         document.querySelectorAll('.changeCategoryBtn').forEach(button => {
-            button.addEventListener('click', function() {
+            button.addEventListener('click', function () {
                 selectedOperationId = this.getAttribute('data-operation-id');
                 selectedCategoryId = null;
-                document.querySelectorAll('.btn-category').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.btn-category').forEach(btn => btn.classList.remove('active-my'));
             });
         });
 
         // При выборе категории в модальном окне отмечаем кнопку как активную
         document.querySelectorAll('.btn-category').forEach(button => {
-            button.addEventListener('click', function() {
-                document.querySelectorAll('.btn-category').forEach(btn => btn.classList.remove('active'));
-                this.classList.add('active');
+            button.addEventListener('click', function () {
+                document.querySelectorAll('.btn-category').forEach(btn => btn.classList.remove('active-my'));
+                this.classList.add('active-my');
                 selectedCategoryId = this.getAttribute('data-category-id');
             });
         });
 
         // При клике на "Сохранить" отправляем запрос на изменение категории
-        document.getElementById('saveCategoryBtn').addEventListener('click', async function() {
+        document.getElementById('saveCategoryBtn').addEventListener('click', async function () {
             if (!selectedOperationId || !selectedCategoryId) {
                 alert('Пожалуйста, выберите товар и новую категорию!');
                 return;
@@ -191,7 +197,7 @@
                         'Content-Type': 'application/json',
                         'X-CSRF-TOKEN': '{{ csrf_token() }}',
                     },
-                    body: JSON.stringify({ category_id: selectedCategoryId })
+                    body: JSON.stringify({category_id: selectedCategoryId})
                 });
 
                 const data = await response.json();
@@ -214,7 +220,7 @@
             }
         });
 
-            function moveItemToCategory(itemId, newCategoryId) {
+        function moveItemToCategory(itemId, newCategoryId) {
             fetch(`/items/${itemId}/update-category`, {
                 method: 'POST',
                 headers: {
@@ -239,29 +245,29 @@
                     console.error('Ошибка:', error);
                     alert('Не удалось переместить элемент');
                 });
-                let selectedOperationId = null;
-                let selectedCategoryId = null;
-                let currentCategoryId = null;
+            let selectedOperationId = null;
+            let selectedCategoryId = null;
+            let currentCategoryId = null;
 
-                document.querySelectorAll('.changeCategoryBtn').forEach(button => {
-                    button.addEventListener('click', function () {
-                        selectedOperationId = this.getAttribute('data-operation-id');
-                        currentCategoryId = this.getAttribute('data-current-category-id');
-                        selectedCategoryId = null;
+            document.querySelectorAll('.changeCategoryBtn').forEach(button => {
+                button.addEventListener('click', function () {
+                    selectedOperationId = this.getAttribute('data-operation-id');
+                    currentCategoryId = this.getAttribute('data-current-category-id');
+                    selectedCategoryId = null;
 
-                        // Очистка старых активных
-                        document.querySelectorAll('.btn-category').forEach(btn => btn.classList.remove('active'));
+                    // Очистка старых активных
+                    document.querySelectorAll('.btn-category').forEach(btn => btn.classList.remove('active'));
 
-                        // Подсвечиваем текущую категорию
-                        const currentBtn = document.querySelector(`.btn-category[data-category-id="${currentCategoryId}"]`);
-                        if (currentBtn) {
-                            currentBtn.classList.add('active');
-                            selectedCategoryId = currentCategoryId;
-                        }
-                    });
+                    // Подсвечиваем текущую категорию
+                    const currentBtn = document.querySelector(`.btn-category[data-category-id="${currentCategoryId}"]`);
+                    if (currentBtn) {
+                        currentBtn.classList.add('active');
+                        selectedCategoryId = currentCategoryId;
+                    }
                 });
+            });
 
-            }
+        }
 
     </script>
 @endpush
