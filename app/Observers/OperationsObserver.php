@@ -15,7 +15,7 @@ class OperationsObserver
      */
     public function created(Operation $operations): void
     {
-        $user = User::query()->find($operations->user_id);
+        $user = User::query()->find($operations->user_id)->first();
 
         $balance = $operations->remaining_balance;
         if ($balance < $user->money/3) {
