@@ -84,4 +84,9 @@ class Operation extends Model
     {
         return $this->belongsTo(Category::class, 'category_id');
     }
+
+    public function item()
+    {
+        return $this->belongsTo(Item::class, 'item_id');
+    }
 }
